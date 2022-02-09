@@ -169,9 +169,90 @@ role1.save
 
 role2 = roles.new
 role2.movie_id = movie1.id
-role2.person_id = person1.id
-role2.character_name = "Bruce Wayne"
+role2.person_id = person2.id
+role2.character_name = "Alfred"
 role2.save
+
+
+role3 = roles.new
+role3.movie_id = movie1.id
+role3.person_id = person3.id
+role3.character_name = "Ra's Al Ghul"
+role3.save
+
+role4 = roles.new
+role4.movie_id = movie1.id
+role4.person_id = person4.id
+role4.character_name = "Rachel Dawes"
+role4.save
+
+role5 = roles.new
+role5.movie_id = movie1.id
+role5.person_id = person5.id
+role5.character_name = "Commissioner Gordon"
+role5.save
+
+role6 = roles.new
+role6.movie_id = movie2.id
+role6.person_id = person1.id
+role6.character_name = "Bruce Wayne"
+role6.save
+
+role7 = roles.new
+role7.movie_id = movie2.id
+role7.person_id = person7.id
+role7.character_name = "Joker"
+role7.save
+
+role8 = roles.new
+role8.movie_id = movie2.id
+role8.person_id = person8.id
+role8.character_name = "Harvey Dent"
+role8.save
+
+role9 = roles.new
+role9.movie_id = movie2.id
+role9.person_id = person2.id
+role9.character_name = "Alfred"
+role9.save
+
+role10 = roles.new
+role10.movie_id = movie2.id
+role10.person_id = person8.id
+role10.character_name = "Rachel Dawes"
+role10.save
+
+role10 = roles.new
+role10.movie_id = movie3.id
+role10.person_id = person1.id
+role10.character_name = "Bruce Wayne"
+role10.save
+
+role11 = roles.new
+role11.movie_id = movie3.id
+role11.person_id = person5.id
+role11.character_name = "Commissioner Gordon"
+role11.save
+
+role12 = roles.new
+role12.movie_id = movie3.id
+role12.person_id = person9.id
+role12.character_name = "Bane"
+role12.save
+
+
+role13 = roles.new
+role13.movie_id = movie3.id
+role13.person_id = person10.id
+role13.character_name = "John Blake"
+role13.save
+
+role14 = roles.new
+role14.movie_id = movie3.id
+role14.person_id = person11.id
+role14.character_name = "Selina Kyle"
+role14.save
+
 
 
 
