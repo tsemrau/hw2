@@ -70,26 +70,116 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-Model.destroy_all
+movies.destroy_all
+people.destroy_all
+roles.destroy_all
 
 # Generate models and tables, according to the domain model
-# TODO!
+# TODO
 
-CREATE TABLE users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_name TEXT,
-  real_name TEXT,
-  location TEXT
-);
+rails generate model Movies
+rails generate model People
+rails generate model Roles
+
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+movie1 = movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = "2005"
+movie1.rating = "PG13"
+movie1.director = "Christopher Nolan"
+movie1.save
+
+movie2 = movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = "2008"
+movie2.rating = "PG13"
+movie2.director = "Christopher Nolan"
+movie2.save
+
+movie3 = movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = "2012"
+movie3.rating = "PG13"
+movie3.director = "Christopher Nolan"
+movie3.save
+
+
+person1 = person.new
+person1.name = "Christian Bale"
+person1.save
+
+person2 = person.new
+person2.name = "Michael Caine"
+person2.save
+
+
+person3 = person.new
+person3.name = "Liam Neeson"
+person3.save
+
+
+person4 = person.new
+person4.name = "Katie Holmes"
+person4.save
+
+person5 = person.new
+person5.name = "Gary Oldman"
+person5.save
+
+
+person6 = person.new
+person6.name = "Heath Ledger"
+person6.save
+
+
+person7 = person.new
+person7.name = "Aaron Eckhart"
+person7.save
+
+
+person8 = person.new
+person8.name = "Maggie Gyllenhaal"
+person8.save
+
+
+person9 = person.new
+person9.name = "Tom Hardy"
+person9.save
+
+
+person10 = person.new
+person10.name = "Joseph Gordon-Levitt"
+person10.save
+
+
+person11 = person.new
+person11.name = "Anne Hathaway"
+person11.save
+
+
+role1 = roles.new
+role1.movie_id = movie1.id
+role1.person_id = person1.id
+role1.character_name = "Bruce Wayne"
+role1.save
+
+role2 = roles.new
+role2.movie_id = movie1.id
+role2.person_id = person1.id
+role2.character_name = "Bruce Wayne"
+role2.save
+
+
+
+
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+puts "movies"
+puts "people"
+puts "roles"
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
