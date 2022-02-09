@@ -70,8 +70,17 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Model.destroy_all
+
 # Generate models and tables, according to the domain model
 # TODO!
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_name TEXT,
+  real_name TEXT,
+  location TEXT
+);
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
