@@ -71,10 +71,8 @@
 # TODO!
 
 Movie.destroy_all
-People.destroy_all
-Roles.destroy_all
-
-puts Movie.all.count
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO
@@ -87,22 +85,19 @@ puts Movie.all.count
 movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = "2005"
-movie1.rating = "PG13"
-movie1.director = "Christopher Nolan"
+movie1.rated = "PG13"
 movie1.save
 
 movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = "2008"
-movie2.rating = "PG13"
-movie2.director = "Christopher Nolan"
+movie2.rated = "PG13"
 movie2.save
 
 movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = "2012"
-movie3.rating = "PG13"
-movie3.director = "Christopher Nolan"
+movie3.rated = "PG13"
 movie3.save
 
 
@@ -159,93 +154,93 @@ person11.name = "Anne Hathaway"
 person11.save
 
 
-role1 = Roles.new
+role1 = Role.new
 role1.movie_id = movie1.id
 role1.person_id = person1.id
 role1.character_name = "Bruce Wayne"
 role1.save
 
-role2 = Roles.new
+role2 = Role.new
 role2.movie_id = movie1.id
 role2.person_id = person2.id
 role2.character_name = "Alfred"
 role2.save
 
 
-role3 = Roles.new
+role3 = Role.new
 role3.movie_id = movie1.id
 role3.person_id = person3.id
 role3.character_name = "Ra's Al Ghul"
 role3.save
 
-role4 = Roles.new
+role4 = Role.new
 role4.movie_id = movie1.id
 role4.person_id = person4.id
 role4.character_name = "Rachel Dawes"
 role4.save
 
-role5 = Roles.new
+role5 = Role.new
 role5.movie_id = movie1.id
 role5.person_id = person5.id
 role5.character_name = "Commissioner Gordon"
 role5.save
 
-role6 = Roles.new
+role6 = Role.new
 role6.movie_id = movie2.id
 role6.person_id = person1.id
 role6.character_name = "Bruce Wayne"
 role6.save
 
-role7 = Roles.new
+role7 = Role.new
 role7.movie_id = movie2.id
 role7.person_id = person7.id
 role7.character_name = "Joker"
 role7.save
 
-role8 = Roles.new
+role8 = Role.new
 role8.movie_id = movie2.id
 role8.person_id = person8.id
 role8.character_name = "Harvey Dent"
 role8.save
 
-role9 = Roles.new
+role9 = Role.new
 role9.movie_id = movie2.id
 role9.person_id = person2.id
 role9.character_name = "Alfred"
 role9.save
 
-role10 = Roles.new
+role10 = Role.new
 role10.movie_id = movie2.id
 role10.person_id = person8.id
 role10.character_name = "Rachel Dawes"
 role10.save
 
-role10 = Roles.new
+role10 = Role.new
 role10.movie_id = movie3.id
 role10.person_id = person1.id
 role10.character_name = "Bruce Wayne"
 role10.save
 
-role11 = Roles.new
+role11 = Role.new
 role11.movie_id = movie3.id
 role11.person_id = person5.id
 role11.character_name = "Commissioner Gordon"
 role11.save
 
-role12 = Roles.new
+role12 = Role.new
 role12.movie_id = movie3.id
 role12.person_id = person9.id
 role12.character_name = "Bane"
 role12.save
 
 
-role13 = Roles.new
+role13 = Role.new
 role13.movie_id = movie3.id
 role13.person_id = person10.id
 role13.character_name = "John Blake"
 role13.save
 
-role14 = Roles.new
+role14 = Role.new
 role14.movie_id = movie3.id
 role14.person_id = person11.id
 role14.character_name = "Selina Kyle"
@@ -262,6 +257,11 @@ puts "roles"
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+movies = Movie.all
+for movie in movies
+    p "#{movie.title} #{movie.year_released} #{movie.rated}"
+end
+
 
 # Prints a header for the cast output
 puts ""
@@ -271,3 +271,10 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+roles = Role.all
+for role in roles
+    movie = Movie.where(id: role.movie_id)[0]
+    name = Person.where(id: role.person_id)[0]
+    p "#{movie.title} #{name.name} #{role.character_name}"
+end
