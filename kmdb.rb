@@ -70,37 +70,35 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-movies.destroy_all
-people.destroy_all
-roles.destroy_all
+Movie.destroy_all
+People.destroy_all
+Roles.destroy_all
+
+puts Movie.all.count
 
 # Generate models and tables, according to the domain model
 # TODO
-
-rails generate model Movies
-rails generate model People
-rails generate model Roles
 
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-movie1 = movie.new
+movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = "2005"
 movie1.rating = "PG13"
 movie1.director = "Christopher Nolan"
 movie1.save
 
-movie2 = movie.new
+movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = "2008"
 movie2.rating = "PG13"
 movie2.director = "Christopher Nolan"
 movie2.save
 
-movie3 = movie.new
+movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = "2012"
 movie3.rating = "PG13"
@@ -108,146 +106,146 @@ movie3.director = "Christopher Nolan"
 movie3.save
 
 
-person1 = person.new
+person1 = Person.new
 person1.name = "Christian Bale"
 person1.save
 
-person2 = person.new
+person2 = Person.new
 person2.name = "Michael Caine"
 person2.save
 
 
-person3 = person.new
+person3 = Person.new
 person3.name = "Liam Neeson"
 person3.save
 
 
-person4 = person.new
+person4 = Person.new
 person4.name = "Katie Holmes"
 person4.save
 
-person5 = person.new
+person5 = Person.new
 person5.name = "Gary Oldman"
 person5.save
 
 
-person6 = person.new
+person6 = Person.new
 person6.name = "Heath Ledger"
 person6.save
 
 
-person7 = person.new
+person7 = Person.new
 person7.name = "Aaron Eckhart"
 person7.save
 
 
-person8 = person.new
+person8 = Person.new
 person8.name = "Maggie Gyllenhaal"
 person8.save
 
 
-person9 = person.new
+person9 = Person.new
 person9.name = "Tom Hardy"
 person9.save
 
 
-person10 = person.new
+person10 = Person.new
 person10.name = "Joseph Gordon-Levitt"
 person10.save
 
 
-person11 = person.new
+person11 = Person.new
 person11.name = "Anne Hathaway"
 person11.save
 
 
-role1 = roles.new
+role1 = Roles.new
 role1.movie_id = movie1.id
 role1.person_id = person1.id
 role1.character_name = "Bruce Wayne"
 role1.save
 
-role2 = roles.new
+role2 = Roles.new
 role2.movie_id = movie1.id
 role2.person_id = person2.id
 role2.character_name = "Alfred"
 role2.save
 
 
-role3 = roles.new
+role3 = Roles.new
 role3.movie_id = movie1.id
 role3.person_id = person3.id
 role3.character_name = "Ra's Al Ghul"
 role3.save
 
-role4 = roles.new
+role4 = Roles.new
 role4.movie_id = movie1.id
 role4.person_id = person4.id
 role4.character_name = "Rachel Dawes"
 role4.save
 
-role5 = roles.new
+role5 = Roles.new
 role5.movie_id = movie1.id
 role5.person_id = person5.id
 role5.character_name = "Commissioner Gordon"
 role5.save
 
-role6 = roles.new
+role6 = Roles.new
 role6.movie_id = movie2.id
 role6.person_id = person1.id
 role6.character_name = "Bruce Wayne"
 role6.save
 
-role7 = roles.new
+role7 = Roles.new
 role7.movie_id = movie2.id
 role7.person_id = person7.id
 role7.character_name = "Joker"
 role7.save
 
-role8 = roles.new
+role8 = Roles.new
 role8.movie_id = movie2.id
 role8.person_id = person8.id
 role8.character_name = "Harvey Dent"
 role8.save
 
-role9 = roles.new
+role9 = Roles.new
 role9.movie_id = movie2.id
 role9.person_id = person2.id
 role9.character_name = "Alfred"
 role9.save
 
-role10 = roles.new
+role10 = Roles.new
 role10.movie_id = movie2.id
 role10.person_id = person8.id
 role10.character_name = "Rachel Dawes"
 role10.save
 
-role10 = roles.new
+role10 = Roles.new
 role10.movie_id = movie3.id
 role10.person_id = person1.id
 role10.character_name = "Bruce Wayne"
 role10.save
 
-role11 = roles.new
+role11 = Roles.new
 role11.movie_id = movie3.id
 role11.person_id = person5.id
 role11.character_name = "Commissioner Gordon"
 role11.save
 
-role12 = roles.new
+role12 = Roles.new
 role12.movie_id = movie3.id
 role12.person_id = person9.id
 role12.character_name = "Bane"
 role12.save
 
 
-role13 = roles.new
+role13 = Roles.new
 role13.movie_id = movie3.id
 role13.person_id = person10.id
 role13.character_name = "John Blake"
 role13.save
 
-role14 = roles.new
+role14 = Roles.new
 role14.movie_id = movie3.id
 role14.person_id = person11.id
 role14.character_name = "Selina Kyle"
